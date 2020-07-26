@@ -1,0 +1,60 @@
+qid,qtext,qeng,cat,min,max,scale,cand09,voter09,cand12,voter12,q_right
+psup,政党,Party,NA,NA,NA,NA,PARTY,Q010300,PARTY,Q010200,NA
+type,新旧,"New, Former, Incumbent",NA,NA,NA,1 New 2 Former 3 Incumbent,INCUMB,NA,INCUMB,NA,NA
+policy00,政治の立場を「左」－「右」の言葉で表現することがよくあります。このものさしで、あなたの立場を示されるとしたらいかがですか。あてはまる番号に1つだけ○をつけて下さい。,General Ideology,11,0,10,0 Left; 10 Right,NA,NA,Q7,Q013300,1
+policy01,衆議院の選挙制度を中選挙区制に戻すべきだ,Go Back to SNTV,5,1,5,1 Support; 5 Oppose,Q8_1,NA,Q5_25,Q013025,NA
+policy02, 今回はともかく、一般論として政権交代があったほうが政治は良くなる,Regime change makes politics better,5,1,5,1 Support; 5 Oppose,Q8_2,NA,NA,NA,NA
+policy03,官僚の天下りは全面的に禁止すべきだ,Amakudari (the practice of senior government officials retiring to high-ranking positions in businesses or semi-public organizations) should be banned,5,1,5,1 Support; 5 Oppose,Q8_3,NA,NA,NA,1
+policy04, 参議院に対する衆議院の優越を強めるべきだ,Strengthen the superiority of HoR over HoC,5,1,5,1 Support; 5 Oppose,Q8_4,NA,Q5_21,Q013021,NA
+policy05,近い将来に政界再編が必要だ,Need reorganization of political world in the near future,5,1,5,1 Support; 5 Oppose,Q8_5,NA,NA,NA,1
+policy06,憲法を改正すべきだ,Should change constitution,5,1,5,1 Support; 5 Oppose,Q9_1,Q013801,Q5_1,Q013001,-1
+policy07,日本の防衛力はもっと強化すべきだ,Should strengthen Japan's defense capacity,5,1,5,1 Support; 5 Oppose,Q9_2,Q013802,Q5_2,Q013002,-1
+policy08,非核三原則を堅持すべきだ,"Should keep ""The Three Principles of Denuclearization""",5,1,5,1 Support; 5 Oppose,Q9_3,Q013803,NA,NA,1
+policy09, 他国からの攻撃が予想される場合には、先制攻撃もためらうべきではない,Should not hesitate preemptive attack if the attack from another country is expected,5,1,5,1 Support; 5 Oppose,Q9_4,Q013804,Q5_3,Q013003,-1
+policy10,日本は国連の安全保障理事会の常任理事国に入って国際的役割を果たすべきだ,Japan should become a permanent member of UN Security countil and fulfill its international duty.,5,1,5,1 Support; 5 Oppose,Q9_5,Q013805,Q5_4,Q013004,-1
+policy11,北朝鮮に対しては対話よりも圧力を優先すべきだ,Prioritize pressure over conversation for North Korea,5,1,5,1 Support; 5 Oppose,Q9_6,Q013806,Q5_5,Q013005,-1
+policy12,（日本は／憲法を改正するか解釈変更して）集団的自衛権を行使すべきだ,Japan should exercise collective defense right,5,1,5,1 Support; 5 Oppose,Q9_7,Q013807,Q5_6,Q013006,-1
+policy13, 国連の活動に参加するためなら、自衛隊を積極的に海外に出すべきだ,Self Defense Force (SDF) should be actively dispatched to oversea if for UN activity,5,1,5,1 Support; 5 Oppose,Q9_8,Q013808,NA,NA,-1
+policy14, 社会福祉など政府のサービスが悪くなっても、お金のかからない小さな政府の方が良い,Small government is better even when public service such as social welfare may get worse,5,1,5,1 Support; 5 Oppose,Q9_9,Q013809,Q5_7,Q013007,-1
+policy15,日本の企業は終身雇用制度を堅持すべきだ,Japan should keep permanent employment,5,1,5,1 Support; 5 Oppose,Q9_10,Q013810,NA,NA,NA
+policy16, 公共事業による雇用確保は必要だ,Need public works to maintain employment,5,1,5,1 Support; 5 Oppose,Q9_11,Q013811,Q5_8,Q013008,NA
+policy17, 当面は財政再建のために歳出を抑えるのではなく、景気対策のために財政出動を行うべきだ,"For now, should conduct fiscal mobilization instead of reducing budget",5,1,5,1 Support; 5 Oppose,Q9_12,Q013812,Q5_9,Q013009,NA
+policy18, 道路予算を維持すべきだ,Should maintain road works budget,5,1,5,1 Support; 5 Oppose,Q9_13,Q013813,NA,NA,-1
+policy19, ５年以内の消費税率引き上げはやむをえない,Cannot avoid the consumption tax raise within 5 years,5,1,5,1 Support; 5 Oppose,Q9_14,Q013814,Q5_10,Q013010,NA
+policy20, 基礎年金の財源は全て税金をあてるべきだ,The source of basic pension should all be tax,5,1,5,1 Support; 5 Oppose,Q9_15,Q013815,NA,NA,NA
+policy21,永住外国人の地方参政権を認めるべきだ,Should allow permanent resident foreigners local suffrage,5,1,5,1 Support; 5 Oppose,Q9_16,Q013816,Q5_16,Q013016,1
+policy22, 外国人労働者の受け入れを進めるべきだ,Should increase the acceptance of foreign workers,5,1,5,1 Support; 5 Oppose,Q9_17,Q013817,Q5_17,Q013017,1
+policy23,治安を守るためにプライバシーや個人の権利が制約されるのは当然だ,It is fine to limit privacy and individual rights for the sake of publi safety,5,1,5,1 Support; 5 Oppose,Q9_18,Q013818,Q5_15,Q013015,-1
+policy24, 個性を伸ばす教育よりも伝統を重んじる教育を優先するべきだ,In education should prioritize tradition over individual uniqueness ,5,1,5,1 Support; 5 Oppose,Q9_19,Q013819,NA,NA,-1
+policy25,死刑制度は廃止すべきだ,Should abolish death penalty,5,1,5,1 Support; 5 Oppose,Q9_20,Q013820,NA,NA,NA
+policy26,長期的には消費税率が10％よりも高くなるのはやむをえない,Cannot avoid consumption tax rate going above 10% in the long run,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_11,Q013011,NA
+policy27,資産を持っている人には年金を支給しなくてよい,Need not to provide pension to those who have assets,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_12,Q013012,1
+policy28,環太平洋経済連携協定（TPP）に参加すべきだ,Should join TPP,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_13,Q013013,NA
+policy29,日銀は、明確なインフレ目標を設定すべきだ,Japan central bank should set clear inflation target,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_14,Q013014,NA
+policy30,道徳教育をもっと充実させるべきだ,Should provide more moral education,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_18,Q013018,-1
+policy31,定期検査で停止中の原子力発電所の運転再開はやむをえない,Cannot avoid restart of nuclear power plant that are temporarily stopping for maintainance,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_19,Q013019,-1
+policy32,被災地以外の自治体は、がれきを積極的に受け入れるべきだ,Municipality outside of victimized are should accept debries actively,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_20,Q013020,NA
+policy33,首相公選制を導入すべきだ,Should start public selection of PM,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_22,Q013022,NA
+policy34,都道府県に代えて道州制を導入すべきだ,Doshu system should replace prefecture,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_23,Q013023,NA
+policy35,消費税を地方税化して、地方交付税を廃止すべきだ,"Consumption tax should become local tax, and abolish local allocation tax",5,1,5,1 Support; 5 Oppose,NA,NA,Q5_24,Q013024,NA
+policy36,国家議員の定数を半分に減らすべきだ,Should reduce number of seats in Diet into half,5,1,5,1 Support; 5 Oppose,NA,NA,Q5_26,Q013026,NA
+policy37,Ａ：環境を守るため、生活水準を犠牲にすることも必要だ; Ｂ：生活水準を犠牲にするほど、環境保護は重要問題ではない,A: Standard of living can be limited for the sake of protecting environment; B: Envionmental protection is not as important as the standard of living,5,1,5,1 Close to A; 5 Close to B,Q10_1,NA,Q6_4,Q013104,NA
+policy38,Ａ：国会議員のいわゆる世襲は禁止すべきだ; Ｂ：国会議員の子弟にも職業選択の自由がある,A: hereditary politicians should be banned; B: Childrens of politicians have a freedom of occupation,5,1,5,1 Close to A; 5 Close to B,Q10_2,Q014001,NA,NA,1
+policy39,Ａ：企業・団体にも政治活動の自由がある; Ｂ：企業・団体献金は全面禁止すべきだ ,A: Companies and interest groups have a freedom of political activities; B: Campaign contributions by companies and interest groups should be banned entirely,5,1,5,1 Close to A; 5 Close to B,Q10_3,Q014002,NA,NA,NA
+policy40,Ａ：治安は悪化しており、犯罪に対する厳罰化を進めるべきだ ; Ｂ：治安は悪化しておらず、犯罪に対する厳罰化には慎重であるべきだ ,"A: Public safety is getting worse, and punishment should be strengthened; B: Public safety is not getting worse, and should be cautioned for strengthening punishment",5,1,5,1 Close to A; 5 Close to B,Q10_4,NA,NA,NA,NA
+policy41,Ａ：高齢者を支えるため、現役世代の負担が重くなるのは避けられない ; Ｂ：現役世代の負担が重くならないよう、高齢者へのサービスを見直すのは避けられない,A: Cannot avoid rising burden of working generation to suppor elders; B: Cannot avoid the change in service for elders to reduce burden of working generation,5,1,5,1 Close to A; 5 Close to B,Q10_5,Q014003,NA,NA,NA
+policy42,Ａ：若者の雇用確保のためには、まずは本人の努力が重要だ; Ｂ：若者の雇用確保のためには、何より政府による対策が重要だ ,"A: For the employment of young generation, the individual effort is of the prime importance; B: For the employment of young generation, the prime importance is of the support from the government.",5,1,5,1 Close to A; 5 Close to B,Q10_6,NA,NA,NA,-1
+policy43, Ａ：夫婦と複数の子どもが揃っているのが家族の基本形だ; Ｂ：シングルマザーや DINKS など家族の形は多様でよい ,"A: The basic form of family is husband, wife, and multiple kids; B: The form of family can be flexible, including single mother and DINKS",5,1,5,1 Close to A; 5 Close to B,Q10_7,NA,Q6_5,Q013105,-1
+policy44, Ａ：日米同盟は日本外交の基軸だ ; Ｂ：日本外交は国連中心主義でいくべきだ ,A: Japan US Alliance os the core of Japanese foreign policy; B: Japanese foreign policy should place UN at its center,5,1,5,1 Close to A; 5 Close to B,Q10_8,NA,NA,NA,-1
+policy45, Ａ：国内産業を保護すべきだ; Ｂ：貿易や投資の自由化を進めるべきだ ,A: should protect domestic industry; B: Should open trade and invest market,5,1,5,1 Close to A; 5 Close to B,Q10_9,NA,Q6_3,Q013103,NA
+policy46,Ａ：政治家は官僚と対決して従わせるのがよい; Ｂ：政治家は官僚と協力して使いこなすのがよい ,A: Politicians should fight with bureaucrats and make them obey; B: Politicians should coordinate wirh bureaucrats,5,1,5,1 Close to A; 5 Close to B,Q10_10,NA,NA,NA,NA
+policy47,A: これからの日本外交の優先順位は「まず米国」である; B: これからの日本外交の優先順位は「まずアジア」である,A: Japanese foreign policy from now should prioritize US; B: Japanese foreign policy from now should prioritize Asia,5,1,5,1 Close to A; 5 Close to B,NA,NA,Q6_1,Q013101,NA
+policy48,A: 社会的格差が多少あっても、いまは経済競争力の向上を優先すべきだ; B: 経済競争力を多少犠牲にしても、いまは社会的格差の是正を優先すべきだ,A: Should priortize economic competition; B:  Should prioritize the reduction of social gap (inequality),5,1,5,1 Close to A; 5 Close to B,NA,NA,Q6_2,Q013102,-1
+policy49,A: 電力に占める原子力発電の比率を、2030年代までに0%にすべきだ; B: 2030年代より後も、原子力発電は電力源のひとつとして保つべきだ,A: The proportion of nuclear powe should become 0% by 2030; B: Nuclear power should stay as one source of power after 2030,5,1,5,1 Close to A; 5 Close to B,NA,NA,Q6_6,Q013106,1
+policy50,A: 現状の政治資金に関する規制は厳し過ぎる; B: 政治資金に関する規制をもっと厳しくすべきだ,A: The current regulation on campaign contribution is too strict; B: The regulation on campaign contribution should be stricter,5,1,5,1 Close to A; 5 Close to B,NA,NA,Q6_7,Q013107,NA
+policy51,A: 国会の第一義的な役割は、与野党が議論を闘わせ、国民に対して争点の所在や政党聞の立場の違いを示すことにある; B: 国会の第一義的な役割は、与野党が意見を調整して、なるべく多くの国民の意思を法律に反映させることにある,A: The role of Diet is the argument between ruling and opposition parties and show citizens the important issues and difference between parties; B: The role of Diet is the coordination between ruling and opposition parties and reflect as much citizen opinion into legislationss as possible,5,1,5,1 Close to A; 5 Close to B,NA,NA,Q6_8,Q013108,NA
+policy52,A: 国会での採決時、政党はなるべく党議拘束をかけて、所属議員が全員一致して行動することが望ましい; B: 国会での採決時、政党はなるべく党議拘束を外して、所属議員がそれぞれ判断して行動することが望ましい,A: All party members should vote in the same way by binding them in rollcall votes; B: Party members should act independently in the rollcall votes,5,1,5,1 Close to A; 5 Close to B,NA,NA,Q6_9,Q013109,NA
+policy53,あなたは、以下の各国に親しみを感じますか、それとも感じませんか。（アメリカ）,Familiarity with US,5,1,5,1 Feel Familiar; 5 Not Feel Familiar,NA,NA,Q9_1,Q013201,NA
+policy54,あなたは、以下の各国に親しみを感じますか、それとも感じませんか。（中国）,Familiarity with China,5,1,5,1 Feel Familiar; 5 Not Feel Familiar,NA,NA,Q9_2,Q013202,NA
+policy55,あなたは、以下の各国に親しみを感じますか、それとも感じませんか。（ロシア）,Familiarity with Russia,5,1,5,1 Feel Familiar; 5 Not Feel Familiar,NA,NA,Q9_3,Q013203,NA
+policy56,あなたは、以下の各国に親しみを感じますか、それとも感じませんか。（韓国）,Familiarity with S. Korea,5,1,5,1 Feel Familiar; 5 Not Feel Familiar,NA,NA,Q9_4,Q013204,NA
