@@ -1,10 +1,29 @@
+## Comparing Performances through Generated Data: Plot
+## Author: Tzu-Ping Liu & Gento Kato
+## Date: 07/27/2020
+## Environment: R 4.0.2 and Ubuntu 20.04
+
+## Clear Workspace
+rm(list = ls())
+
+## Set Working Directory (Automatically) ##
+require(rprojroot); require(rstudioapi)
+if (rstudioapi::isAvailable()==TRUE) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path)); 
+} 
+projdir <- find_root(has_file("thisishome.txt"))
+cat(paste("Working Directory Set to:\n",projdir))
+setwd(projdir)
+
+# Packages 
 library(ggplot2)
 library(ggrepel)
+require(grid)
 require(statar)
 require(reshape2)
 
 ## Load Data
-load(paste0(projdir, "/Outputs/simulation/fit_20.rda"))
+load(paste0(projdir, "/Outputs/simulation/mcmc_corr_fit_20.rda"))
 
 fit <- fit_20
 colnames(fit) <- c("Cor_Joint", "Cor_Procrustes", "Cor_Regression", "Cor_Concatenation", "Joint_Procrustes", "Joint_Regression", "Joint_Concatenation", "Error")
@@ -29,6 +48,7 @@ fit2$err[fit2$err=="Medium error"] <- "Med."
 fit2$err[fit2$err=="High error"] <- "High"
 fit2$err <- factor(fit2$err, levels=c("Low","Med.","High"))
 
+## Draw Plot
 p <- ggplot(fit2, aes(x=err,y=cor,fill=err)) + 
   geom_boxplot() + 
   facet_grid(x~y) + 
@@ -38,8 +58,7 @@ p <- ggplot(fit2, aes(x=err,y=cor,fill=err)) +
   theme(legend.position = "none",
         plot.subtitle = element_text(hjust=0.5))
 
-#+ fig.width=6, fig.height=4
 grid.draw(p) 
 
-#+
-ggsave(paste0(projdir, "/Outputs/simulation/mcmc_corr_new.pdf"),p, width=6, height=4)
+## Save Plot
+ggsave(paste0(projdir, "/Outputs/simulation/mcmc_corr_plot_20.pdf"),p, width=6, height=4)

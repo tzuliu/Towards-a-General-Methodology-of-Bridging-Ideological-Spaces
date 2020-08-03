@@ -1,3 +1,9 @@
+## Rearranging Senator Data
+## Author: Tzu-Ping Liu & Gento Kato
+## Date: 07/26/2020
+## Environment: R 4.0.2 on Ubuntu 20.04
+
+# packages
 library(ggplot2)
 library(ggrepel)
 
@@ -21,7 +27,7 @@ sp0 <-ggplot(points, aes(x=x,y=y)) +
   theme(plot.title = element_text(hjust=0.5, size=16),
         axis.title = element_blank(),
         axis.text = element_text(size=12))
-# sp0
+sp0
 
 # Rotated Space 
 
@@ -46,7 +52,7 @@ sp1 <-ggplot(points1, aes(x=x,y=y)) +
   theme(plot.title = element_text(hjust=0.5, size=14),
         axis.title = element_blank(),
         axis.text = element_text(size=12))
-# sp1
+sp1
 
 # Translated Space 
 
@@ -71,7 +77,7 @@ sp2 <-ggplot(points2, aes(x=x,y=y)) +
   theme(plot.title = element_text(hjust=0.5, size=14),
         axis.title = element_blank(),
         axis.text = element_text(size=12))
-# sp2
+sp2
 
 # Scaled Space 
 
@@ -96,7 +102,7 @@ sp3 <-ggplot(points3, aes(x=x,y=y)) +
   theme(plot.title = element_text(hjust=0.5, size=14),
         axis.title = element_blank(),
         axis.text = element_text(size=12))
-# sp3
+sp3
 
 # Shearing
 
@@ -121,7 +127,7 @@ sp4 <-ggplot(points4, aes(x=x,y=y)) +
   theme(plot.title = element_text(hjust=0.5, size=14),
         axis.title = element_blank(),
         axis.text = element_text(size=12))
-# sp4
+sp4
 
 # Reflection
 
@@ -146,7 +152,7 @@ sp5 <-ggplot(points5, aes(x=x,y=y)) +
   theme(plot.title = element_text(hjust=0.5, size=14),
         axis.title = element_blank(),
         axis.text = element_text(size=12))
-# sp5
+sp5
 
 ## Annotation Plot
 
@@ -165,7 +171,7 @@ spant <- ggplot(ant, aes(x=x,y=y,label=lab)) +
   geom_text(size=5, hjust=0, lineheight = .8) + 
   coord_cartesian(xlim=c(0,5), ylim=c(-0.15,0.55)) + 
   theme_void()
-# spant
+spant
 
 ## Arrange Plots
 
@@ -179,10 +185,8 @@ library(grid)
 p <- arrangeGrob(arrangeGrob(sp1, sp0, sp5, ncol=3, widths=c(1,1,1)), 
                  arrangeGrob(sp2,sp3,sp4, ncol=3), nrow=2)
 
-#+ fig.width=9.5, fig.height=6.5
 grid.draw(p)
 
-#+
 ggsave(paste0(projdir, "/Outputs/illustration/transform_illustration.png"), p, width=9.5, height=6.5)
 
 # Save individual figures

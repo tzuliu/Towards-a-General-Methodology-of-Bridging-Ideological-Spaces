@@ -1,4 +1,21 @@
-#
+## Comparing Performances through Generated Data: Experiment
+## Author: Tzu-Ping Liu & Gento Kato
+## Date: 07/27/2020
+## Environment: R 4.0.2 and Ubuntu 20.04
+
+## Clear Workspace
+rm(list = ls())
+
+## Set Working Directory (Automatically) ##
+require(rprojroot); require(rstudioapi)
+if (rstudioapi::isAvailable()==TRUE) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path)); 
+} 
+projdir <- find_root(has_file("thisishome.txt"))
+cat(paste("Working Directory Set to:\n",projdir))
+setwd(projdir)
+
+# Packages
 library(MASS)
 library(MCMCpack)
 library(hitandrun)
@@ -10,12 +27,7 @@ library(ggplot2)
 library(viridis)
 library(foreach)
 library(doParallel)
-#
-no_cores <- detectCores() - 1
-cl <- makeCluster(no_cores)
-registerDoParallel(cl)
-#
-set.seed(1985)
+library(doSNOW)
 #
 #
 #
@@ -180,6 +192,13 @@ montecarlo.oc <- function(n=1200, q=20, ndim=2, utility.probs=c(0.33,0.33,0.33),
 #		3.) Error rate
 #
 #
+# Set Cores
+set.seed(1985)
+(no_cores <- detectCores() - 1)
+cl <- makeCluster(no_cores)
+# registerDoParallel(cl)
+registerDoSNOW(cl)
+# Number of Trials
 ntrials <- 400
 #
 # !!!!!!!!!!!!!!!!!!!!!!!!!
@@ -189,12 +208,13 @@ ntrials <- 400
 # !!!!!!!!!!!!!!!!!!!!!!!!!
 #
 #
-#
-###########
-###########
-###########
-###########
-fit_20 <- foreach(i=1:ntrials, .combine='rbind', .packages=c("ooc", "statar", "Matrix")) %dopar% {
+## With 20 Outsamples
+pb <- txtProgressBar(max = ntrials, style = 3)
+progress <- function(n) setTxtProgressBar(pb, n)
+opts <- list(progress = progress)
+fit_20 <- foreach(i=1:ntrials, .combine='rbind', .packages=c("ooc", "statar", "Matrix"), 
+                  .options.snow = opts) %dopar% {
+  
   set.seed(i+1981)
   sim <- montecarlo.oc(n=2400, q=40, ndim=2, utility.probs=runif(3,0,1), missing=0.1, error.respondents=sort(runif(2,0,0.5)), error.issues=c(runif(1,0,3), 0.5))
   anchor <- 20
@@ -238,16 +258,26 @@ fit_20 <- foreach(i=1:ntrials, .combine='rbind', .packages=c("ooc", "statar", "M
   ##########################################
   ## Estimating Regression Transformation ##
   ##########################################
-  reg_x <- lm(anchors_2[,1] ~ anchors_1[,1])
-  reg_y <- lm(anchors_2[,2] ~ anchors_1[,2])
-  x_int <- reg_x$coef[1]; x_slo <- reg_x$coef[2]
-  y_int <- reg_y$coef[1]; y_slo <- reg_y$coef[2]
+  reg_x <- lm(anchors_2[,1] ~ anchors_1[,1] + anchors_1[,2])
+  reg_y <- lm(anchors_2[,2] ~ anchors_1[,1] + anchors_1[,2])
+  x_int <- reg_x$coef[1]; x_slo1 <- reg_x$coef[2]; x_slo2 <- reg_x$coef[3]
+  y_int <- reg_y$coef[1]; y_slo1 <- reg_y$coef[2]; y_slo2 <- reg_y$coef[3]
+  # reg_x <- lm(anchors_2[,1] ~ anchors_1[,1])
+  # reg_y <- lm(anchors_2[,2] ~ anchors_1[,2])
+  # x_int <- reg_x$coef[1]; x_slo <- reg_x$coef[2]
+  # y_int <- reg_y$coef[1]; y_slo <- reg_y$coef[2]
   ###############################
   ## R-Transforming All Points ##
   ###############################
-  x_1_r_x <- x_int + x_slo*x_1[,1]
-  x_1_r_y <- y_int + y_slo*x_1[,2]
+  x_1_r_x <- x_int + x_slo1*x_1[,1] + x_slo2*x_1[,2]
+  x_1_r_y <- y_int + y_slo1*x_1[,1] + y_slo2*x_1[,2]
   x_1_r <- cbind(x_1_r_x, x_1_r_y)
+  # x_1_r_x <- x_int + x_slo*x_1[,1]
+  # x_1_r_y <- y_int + y_slo*x_1[,2]
+  # x_1_r <- cbind(x_1_r_x, x_1_r_y)
+  ##################
+  ## Re-Fresh x_2 ##
+  ##################
   x_2 <- x_2[1:(nrow(x_2)-anchor),]
   ###############################
   ## Get New X's               ##
@@ -269,5 +299,8 @@ fit_20 <- foreach(i=1:ntrials, .combine='rbind', .packages=c("ooc", "statar", "M
   error <- sim$error
   c(corx, corx_p, corx_r, corx_n, cor_x_p, cor_x_r, cor_x_n, error)
 }
+close(pb)
+stopCluster(cl)
 
-save(fit_20, file=paste0(projdir, "/Outputs/simulation/fit_20.rda"))
+## Save Result
+save(fit_20, file=paste0(projdir, "/Outputs/simulation/mcmc_corr_fit_20.rda"))

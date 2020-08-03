@@ -46,13 +46,13 @@ dvp <- d[which(d$cv=="voter"),"psup"]
 dc_right <- 1
 dv_right <- 3
 
-## delet senators by the percentage of NA
+## delete senators by the percentage of NA
 del_rep <- vector()
 for(i in 1:nrow(dc)){if(sum(is.na(dc[i,]))/27 > 0.5){del_rep <- c(del_rep,i) }}
 dc <- dc[-del_rep,]
 ## fixing the length of party id
 dcp <- dcp[-del_rep]
-## delet voters by the percentage of NA
+## delete voters by the percentage of NA
 del_rep <- vector()
 for(i in 1:nrow(dv)){if(sum(is.na(dv[i,]))/27 > 0.6){del_rep <- c(del_rep,i) }}
 dv <- dv[-del_rep,]

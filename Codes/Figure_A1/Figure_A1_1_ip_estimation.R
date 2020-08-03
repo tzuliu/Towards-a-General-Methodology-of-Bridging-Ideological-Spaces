@@ -1,3 +1,19 @@
+## Ideal Point Analysis for UTAS 2009
+## Author: Tzu-Ping Liu & Gento Kato
+## Date: 07/25/2020
+## Environment: R 4.0.2 on Ubuntu 20.04
+
+## Clear Workspace
+rm(list = ls())
+
+## Set Working Directory (Automatically) ##
+require(rprojroot); require(rstudioapi)
+if (rstudioapi::isAvailable()==TRUE) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path));
+} 
+projdir <- find_root(has_file("thisishome.txt"))
+cat(paste("Working Directory Set to:\n",projdir))
+setwd(projdir)
 
 ## Load Data
 load(paste0(projdir,"/Outputs/application/utas09_data.rda"))
@@ -9,6 +25,7 @@ source(paste0(projdir,"/Codes/ipbridge.R"))
 ## Joint ##
 ###########
 
+polar <- nrow(utas1_c_p) + utas1_rightcand_v
 utas1_j_p <- rbind.data.frame(utas1_c_p,utas1_v_p)
 
 ## Estimate
@@ -22,9 +39,9 @@ tj$party <- z
 tj$cv <- c(rep("Candidate",nrow(utas1_c_p)), rep("Voter",nrow(utas1_v_p)))
 ip_j <- tj %>% filter(party == "LDP" | party == "DPJ" )
 
-############
-## C to V ##
-############
+#################################
+## Candidates on voter's space ##
+#################################
 
 ## set.seed
 set.seed(20191005)
@@ -78,9 +95,9 @@ ipc_dt1o_2 <- ipc_dt1o_2 %>% mutate(cv = "Candidate")
 ip_dt1 <- rbind(ipc_dt1o_2, ipv_dt1_2)
 ip_dt1$party <- factor(ip_dt1$party, levels=c("LDP","DPJ","JCP","Other/NA", "YP","CGP (Komei)","SDP","PNP","Abstained"))
 
-############
-## V to C ##
-############
+#################################
+## Voters on candidates' space ##
+#################################
 
 ##set.seed
 set.seed(20191005)
@@ -123,4 +140,10 @@ ipv_dt2o_2 <- ipv_dt2o_2 %>% mutate(cv = "Voter")
 ## Create candidate & (original) voter IP data
 ip_dt2 <- rbind(ipc_dt2_2, ipv_dt2o_2)
 
-save.image(paste0(projdir,"/Outputs/application/utas09_ip.rda"))
+####################
+## Save workspace ##
+####################
+
+tmpdir <- projdir
+rm(projdir)
+save.image(paste0(tmpdir,"/Outputs/application/utas09_ip.rda"))

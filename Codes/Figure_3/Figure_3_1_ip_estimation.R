@@ -1,3 +1,20 @@
+## Ideal Point Analysis for UTAS 2012
+## Author: Tzu-Ping Liu & Gento Kato
+## Date: 07/25/2020
+## Environment: R 4.0.2 on Ubuntu 20.04
+
+## Clear Workspace
+rm(list = ls())
+
+## Set Working Directory (Automatically) ##
+require(rprojroot); require(rstudioapi)
+if (rstudioapi::isAvailable()==TRUE) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path));
+} 
+projdir <- find_root(has_file("thisishome.txt"))
+cat(paste("Working Directory Set to:\n",projdir))
+setwd(projdir)
+
 ## Load Data
 load(paste0(projdir, "/Outputs/application/utas12_data.rda"))
 
@@ -8,6 +25,8 @@ source(paste0(projdir, "/Codes/ipbridge.R"))
 ## Joint ##
 ###########
 
+# Combined Data
+jointpol <- nrow(utas2_c_p) + utas2_rightcand_v
 utas2_j_p <- rbind.data.frame(utas2_c_p,utas2_v_p)
 
 ## Estimate
@@ -21,9 +40,9 @@ tj$party <- z
 tj$cv <- c(rep("Candidate",nrow(utas2_c_p)), rep("Voter",nrow(utas2_v_p)))
 ip_j <- tj %>% filter(party == "LDP" | party == "DPJ" | party == "JRP")
 
-############
-## C to V ##
-############
+#################################
+## Candidates on voter's space ##
+#################################
 
 ##Set.seed
 set.seed(20191005)
@@ -69,21 +88,22 @@ ipc_dt1o_2 <- ipc_dt1o_2 %>% mutate(cv = "Candidate")
 ip_dt1 <- rbind(ipc_dt1o_2, ipv_dt1_2)
 ip_dt1$party <- factor(ip_dt1$party, levels=c("LDP","DPJ","JRP","JCP","Other/NA", "YP","TPJ","CGP (Komei)","SDP","Abstained"))
 
+# descriptions
 ip_dt1$cv2 <- ifelse(ip_dt1$cv=="Candidate",
-                     "Candidate\n(untransformed)",
-                     "Voter\n(untransformed)")
+                     "Candidate\n(Untransformed)",
+                     "Voter\n(Untransformed)")
 ip_dt1_pro$cv2 <- ifelse(ip_dt1_pro$cv=="Candidate",
                          "Candidate\n(Procrustes)",
-                         "Voter\n(XProcrustes)")
+                         "Voter\n(XProcrustes)") # will not be used in figure
 ip_dt1_reg$cv2 <- ifelse(ip_dt1_reg$cv=="Candidate",
                          "Candidate\n(Regression)",
-                         "Voter\n(XRegression)")
+                         "Voter\n(XRegression)") # will not be used in figure
 ip_dt1 <- rbind(ip_dt1,ip_dt1_pro,ip_dt1_reg)
 ip_dt1$cv2 <- factor(ip_dt1$cv2, levels=unique(ip_dt1$cv2)) 
 
-############
-## V to C ##
-############
+#################################
+## Voters on candidates' space ##
+#################################
 
 ## set.seed
 set.seed(20191005)
@@ -131,17 +151,22 @@ colnames(ipv_dt2o) <- c("coord1D","coord2D","party")
 ipv_dt2o_2 <- ipv_dt2o %>% filter(party == "LDP" | party == "DPJ" | party == "JRP")
 ipv_dt2o_2 <- ipv_dt2o_2 %>% mutate(cv = "Voter")
 
+# descriptions
 ip_dt2$cv2 <- ifelse(ip_dt2$cv=="Candidate",
-                     "Candidate\n(untransformed)",
-                     "Voter\n(untransformed)")
+                     "Candidate\n(Untransformed)",
+                     "Voter\n(Untransformed)")
 ip_dt2_pro$cv2 <- ifelse(ip_dt2_pro$cv=="Candidate",
-                         "Candidate\n(XProcrustes)",
+                         "Candidate\n(XProcrustes)", # will not be used in figure
                          "Voter\n(Procrustes)")
 ip_dt2_reg$cv2 <- ifelse(ip_dt2_reg$cv=="Candidate",
-                         "Candidate\n(XRegression)",
+                         "Candidate\n(XRegression)", # will not be used in figure
                          "Voter\n(Regression)")
 ip_dt2 <- rbind(ip_dt2,ip_dt2_pro,ip_dt2_reg)
 ip_dt2$cv2 <- factor(ip_dt2$cv2, levels=unique(ip_dt2$cv2)) 
+
+####################
+## Save workspace ##
+####################
 
 # rm(ip_dt1_pro, ip_dt1_reg, ip_dt2_pro, ip_dt2_reg, ipc_dt1_pro, ipc_dt1_pro2, 
 #    ipc_dt1_reg, ipc_dt1_reg2, ipc_dt1o, ipc_dt1o_2, ipc_dt2, ipc_dt2_2, ipv_dt1,
@@ -150,4 +175,6 @@ ip_dt2$cv2 <- factor(ip_dt2$cv2, levels=unique(ip_dt2$cv2))
 # 
 # rm(dcp, dcp_new, dvp, dvp_new, jointpol, utas2_rightcand_c, utas2_rightcand_v, z, ipbridge)
 
-save.image(paste0(projdir, "/Outputs/application/utas12_ip.rda"))
+tmpdir <- projdir
+rm(projdir)
+save.image(paste0(tmpdir, "/Outputs/application/utas12_ip.rda"))

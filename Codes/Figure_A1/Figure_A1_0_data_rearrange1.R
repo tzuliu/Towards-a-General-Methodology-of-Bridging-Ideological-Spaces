@@ -1,4 +1,19 @@
-## Recode UTAS 09 Data
+## Rearranging UTAS 2009 (1)
+## Author: Tzu-Ping Liu & Gento Kato
+## Date: 07/25/2020
+## Environment: R 4.0.2 on Ubuntu 20.04
+
+## Clear Workspace
+rm(list = ls())
+
+## Set Working Directory (Automatically) ##
+require(rprojroot); require(rstudioapi)
+if (rstudioapi::isAvailable()==TRUE) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path)); 
+} 
+projdir <- find_root(has_file("thisishome.txt"))
+cat(paste("Working Directory Set to:\n",projdir))
+setwd(projdir)
 
 ## Packages
 require(haven)
