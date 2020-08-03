@@ -29,7 +29,7 @@ Replication Codes:
  * [1. Estimating Ideal Points](./Codes/Figure_2/Figure_2_1_ip_estimation.R)
  * [2. Exporting Figure/Table](./Codes/Figure_2/Figure_2_2_plot.R)
 
-![Figure 2](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/application/senator_figure.pdf)
+![Figure 2](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/application/senator_figure.png)
 
 ### Figure 3/Table 2: Comparing Bridging Results for Japanese Candidates and Voters (UTAS 2012)
 
@@ -39,7 +39,7 @@ Replication Codes:
  * [1. Estimating Ideal Points](./Codes/Figure_3/Figure_3_1_ip_estimation.R)
  * [2. Exporting Figure/Table](./Codes/Figure_3/Figure_3_2_plot.R)
 
-![Figure 3](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/application/utas12_figure.pdf)
+![Figure 3](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/application/utas12_figure.png)
 
 ### Figure 4: Density Plots of Candidate's Positions with Different Amount of Extra Voter Samples (UTAS 2012)
 
@@ -53,7 +53,7 @@ Replication Codes:
  * [1. Rearranging Data](./Codes/Figure_4/Figure_4_1_data_rearrange.R)
  * [2. Exporting Figure](./Codes/Figure_4/Figure_4_2_plot.R)
 
-![Figure 4](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/simulation/utas12_sim_400_outsample_density.pdf)
+![Figure 4](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/simulation/utas12_sim_400_outsample_density.png)
 
 ### Figure 5: Correlation between Estimated and Real Positions
 
@@ -61,7 +61,7 @@ Replication Codes:
  * [0. Creating Data](./Codes/Figure_5/Figure_5_0_data_creation.R)
  * [1. Exporting Figure](./Codes/Figure_5/Figure_5_1_plot.R)
 
-![Figure 5](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/simulation/mcmc_corr_plot_20.pdf)
+![Figure 5](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/simulation/mcmc_corr_plot_20.png)
 
 ### Figure A1/Table A1: Comparing Bridging Results for Japanese Candidates and Voters (UTAS 2009)
 
@@ -71,7 +71,7 @@ Replication Codes:
  * [1. Estimating Ideal Points](./Codes/Figure_A1/Figure_A1_1_ip_estimation.R)
  * [2. Exporting Figure/Table](./Codes/Figure_A1/Figure_A1_2_plot.R)
 
-![Figure A1](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/application/utas09_figure.pdf)
+![Figure A1](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/application/utas09_figure.png)
 
 ### Figure A2: Density Plots of Senator's Positions with Different Amount of Extra Voter Samples
 
@@ -84,4 +84,4 @@ Replication Codes:
  * [1. Rearranging Data](./Codes/Figure_A5/Figure_A5_1_data_rearrange.R)
  * [2. Exporting Figure](./Codes/Figure_A5/Figure_A5_2_plot.R)
 
-![Figure A2](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/simulation/senator_sim_400_outsample_density.pdf)
+![Figure A2](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/simulation/senator_sim_400_outsample_density.png)

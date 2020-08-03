@@ -255,3 +255,5 @@ grid.draw(pall)
 ## Save Plot
 ggsave(paste0(projdir,"/Outputs/application/senator_figure.pdf"), 
        pall, width=8.6, height=6.5)
+ggsave(paste0(projdir,"/Outputs/application/senator_figure.png"), 
+       pall, width=8.6, height=6.5)

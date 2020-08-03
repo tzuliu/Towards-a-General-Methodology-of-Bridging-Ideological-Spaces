@@ -67,3 +67,4 @@ grid.draw(p)
 
 ## Save Plot
 ggsave(paste0(projdir, "/Outputs/simulation/senator_sim_400_outsample_density.pdf"), p, width=6, height=4)
+ggsave(paste0(projdir, "/Outputs/simulation/senator_sim_400_outsample_density.png"), p, width=6, height=4)
