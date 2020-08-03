@@ -18,6 +18,8 @@ Bridging ideal points estimated in two different groups of individuals (e.g., po
 
 ### Figure 1: Variations in Forms of Geometric Transformation
 
+![Figure 1](https://github.com/tzuliu/Towards-a-General-Methodology-of-Bridging-Ideological-Spaces/raw/master/Outputs/illustration/transform_illustration.png)
+
 [Replication Codes](./Codes/Figure_1.R)
 
 ### Figure 2/Table 1: Comparing Bridging Results for US Senators and Voters
