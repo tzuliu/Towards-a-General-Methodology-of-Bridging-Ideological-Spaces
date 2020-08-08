@@ -8,7 +8,9 @@ Samuel Fuller (UC Davis)
 
 ## Working Paper
 
-*In progress*
+* Version 8/8/2020 ([Available from SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3669591))
+
+* [Online Appendix](./Papers/Online_Appendix_for__Towards_a_General_Methodology_of_Bridging_Ideological_Spaces_.pdf)
 
 ## Abstract
 
